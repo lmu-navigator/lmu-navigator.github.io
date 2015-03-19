@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Admin-Guide - LMU Navigator</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LMU Navigator</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+            <li class="toctree-l1 current">
+                <a class="current" href=".">Admin-Guide</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../android">Android</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../ios">iOS</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../server">Server</a>
+            </li>
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href=".."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    <li>Admin-Guide</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/lmu-navigator" class="icon icon-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="anleitung-fur-den-administrator">Anleitung für den Administrator</h1>
+<p>Die Gebäude- und Raumdaten der LMU werden regelmäßig aktualisiert. Über die Admin-Oberfläche können
+die Daten aufbereitet und anschließend für den Abruf in der App zur Verfügung gestellt werden. Die
+App checkt bei jedem Start den aktuell verfügbaren Datenbestand und läd ihn bei Bedarf herunter.</p>
+<p><em>Hinweis</em>:
+Die Admin-Komponente ist als Server mit Weboberfläche konzipiert. Da der Server jedoch bisher an keiner offiziellen
+Stelle installiert werden konnte, muss eine lokale Instanz auf dem eigenen Rechner eingerichtet
+werden. Siehe dazu die <a href="../server">Server-Dokumentation</a>.</p>
+<h2 id="uberblick">Überblick</h2>
+<p>Einmal pro Semester wird vom <a href="http://www.uni-muenchen.de/einrichtungen/zuv/uebersicht/dez_iv/ref_iv1/index.html">Referat IV.1</a> (Bau, Planung, Bewirtschaftung) der LMU München der
+aktualisierte Datenbestand zur Verfügung gestellt. Dieser beinhaltet einen CSV-Export aus deren
+Gebäudeverwaltungsystem und alle PDF-Gebäudepläne, welche auch öffentlich auf der <a href="http://www.uni-muenchen.de/ueber_die_lmu/standorte/lageplaene/index.html">LMU Webseite</a>
+verfügbar sind. Unser Hauptansprechpartner hierfür war bisher Herr Petrich.</p>
+<p>Alle wichtigen Schritte welche vom Referats IV.1 für den CSV- und PDF-Export zu berücksichtigen
+sind, haben wir in unserem Wiki zusammengefasst: <a href="https://github.com/lmu-navigator/data/wiki/CSV-Dateien-anfordern">CSV-Dateien anfordern</a></p>
+<p>Auf dieser Seite soll dokumentiert werden, wie anschließend ein Datenupdate durchgeführt werden
+kann. Es sind folgende Schritte nötig, welche unten jeweils genauer beschrieben werden:</p>
+<ol>
+<li>Import der CSV-Dateien in die Datenbank</li>
+<li>Umwandlung der PDF-Dateien in PNG-Bilder</li>
+<li>Durchführung des Algorithmus für die Positionierung der Räume</li>
+<li>Erstellung der Bildkacheln für die App</li>
+<li>Export und Bereitstellung der Daten für die App</li>
+</ol>
+<p>Unabhängig davon lassen sich auch jederzeit die Gebäudefotos aktualisieren, die in der App angezeigt
+werden.</p>
+<h2 id="1-import-der-csv-dateien">1. Import der CSV-Dateien</h2>
+<p>Als Erstes müssen die CSV-Dateien importiert werden. Dazu wählt man in der Weboberfläche
+den Punkt <em>CSV-Upload</em>, wählt die entsprechende Datei aus und klickt auf <em>Upload</em>. Das importiert
+die Daten in die Datenbank.</p>
+<p>Die CSV-Dateien müssen im folgenden Format vorliegen, damit sie automatisch in die Datenbank eingelesen werden können:</p>
+<pre><code>[01_Stadt.csv]        Stadtcode;Stadt;Dateiname
+[02_Strasse.csv]      Stadtcode;Stadt;Dateiname
+[03_Bauwerk.csv]      BWCode;Stadtcode;Straßencode;Benennung
+[04_BauteilHaus.csv]  BTCode;Stadtcode;Straßencode;BWCode;BauteilHaus
+[05_Geschoss.csv]     GCode;Stadtcode;Straßencode;BWCode;BTCode;Geschoss;Benennung;Dateiname
+[06_Raum.csv]         GCode;Stadtcode;Straßencode;BWCode;BTCode;Geschoss;Benennung;Raumnummer;RCode;Dateiname
+</code></pre>
+
+<h2 id="2-umwandlung-der-pdf-dateien-in-png-bilder">2. Umwandlung der PDF-Dateien in PNG-Bilder</h2>
+<p>Als nächstes steht ein etwas mühsamerer Schritt an, es müssen alle PDFs in PNGs umgewandelt werden.
+Hierbei können einige Fehler auftreten. Eine Sammlung der häufigsten Fehler findet ihr in unserem
+GitHub-Wiki, welches nur für Projektmitglieder sichtbar ist: <a href="https://github.com/lmu-navigator/data/wiki/PNG-Dateien-generieren">PNG-Dateien generieren</a></p>
+<p>Bisher haben wir diesen Schritt mit Photoshop umgesetzt, da dort die Qualität der PNGs im Vergleich
+zu Varianten mit GIMP oder Kommandozeilenskripts zufriedenstellender war.</p>
+<ol>
+<li>Photoshop öffnen und dort die Aktionen gemäß den <a href="https://github.com/lmu-navigator/data/wiki/PNG-Dateien-generieren">Vorgaben im Wiki</a> anlegen.</li>
+<li>Mittels Stapelverarbeitung jeweils ca. 100 PDFs öffnen und mittels der zweiten Aktion
+automatisiert als PNG speichern lassen.</li>
+</ol>
+<p>Sowohl die PDF- als auch die PNG-Dateien werden für die Raumpositionierung im nächsten Schritt
+benötigt. Es muss sichergestellt werden, dass die PDFs und die PNGs in getrennten Ordnern liegen,
+bspw. <em>pdf/</em> und <em>png/</em>. Falls ein Remote-Server verwendet wird, müssen die Dateien dort abgelegt
+werden. Anschließend in der Webobefläche den Punkt <em>Stored Data</em> aufrufen und in den Feldern oben
+die Pfade zu den beiden Ordnern eintragen.</p>
+<h2 id="3-positionierung-der-raume">3. Positionierung der Räume</h2>
+<p>Nachdem die CSV-Dateien importiert (Schritt 1) und die PDF- + PNG-Dateien erstellt und korrekt
+referenziert worden sind (Schritt 2), kann die Positionierung der Räume auf den PDFs nun über die
+Weboberfläche durchgeführt werden. Dazu die Seite <em>Stored Data</em> aufrufen und folgende Schritte
+ausführen:</p>
+<ol>
+<li>Zunächst nochmals PNG- und PDF-Pfade überprüfen</li>
+<li>Die Bildgrößen der PNG-Dateien bestimmen, dazu auf <em>calculate dimension of PNGs</em> klicken</li>
+<li>Nun kann der eigentliche Algorithmus gestartet werden. Dies kann für jedes Stockwerk einzeln mit
+einem Klick auf <em>automated</em> in der Spalte <strong>positionRooms</strong> geschehen, oder gleich für den
+kompletten Datenbestand über die Schaltfläche <em>batch update</em>. Ein Batch-Durchlauf kann durchaus eine
+längere Zeit dauern (&gt; 30min)!</li>
+<li>Unter <em>manual positioning</em> kann die Positionierung überprüft und manuell korrigiert werden, falls
+ein Raum nicht korrekt positioniert wurde. Falls manche Räume gar nicht gefunden wurden, werden
+diese in der Spalte <em>notPos</em> als rot angezeigt.</li>
+<li>Alle Daten noch überprüfen, ob nicht doch ausversehen auf den ausgegrauten Flächen ein Raum positioniert wurde.</li>
+</ol>
+<h2 id="4-erstellung-der-bildkacheln-fur-die-app">4. Erstellung der Bildkacheln für die App</h2>
+<p>Nun müssen noch die Bildkacheln generiert werden, die in der App zur Anzeige der Gebäudepläne
+verwendet werden. Dafür gibt es ein <a href="https://github.com/lmu-navigator/common/blob/master/util/create_tiles.sh">Kommandozeilenskript</a>, welches auf Mac- und Linux-Rechnern
+funktionieren sollte. Es wird lediglich die <em>Imagemagick</em>-Bibliothek benötigt, die in der Regel
+vorinstalliert ist.</p>
+<p>Das Skript muss in den Ordner mit den PNG-Dateien kopiert werden. Ein Aufruf sieht folgendermaßen aus: <code>./create_tiles &lt;datei&gt;.png</code></p>
+<p>Alle Dateien gleich in einem Kommando zu verarbeiten, ist bspw. so möglich:</p>
+<pre><code>for i in *.png; do
+echo $i
+./create_tiles $i
+done;
+</code></pre>
+
+<p>Die fertig generierten Kacheln befinden sich anschließend im Ordner <em>tiles/</em>.</p>
+<h2 id="5-export-und-deployment-der-daten">5. Export und Deployment der Daten</h2>
+<p>Ursprünglich sollten die Daten über das REST-Interface des Servers abgerufen werden können. Da aber
+bisher kein Server zur Verfügung steht, werden alle Daten nun statisch auf unserer <a href="http://lmu-navigator.github.io">github.io</a>
+Seite bereitgestellt.</p>
+<p>Zunächst muss also die REST API manuell aufgerufen und die Daten als JSON-Datei abgespeichert
+werden:</p>
+<ul>
+<li><code>http://&lt;Pfad zum Server&gt;/rest/cities</code> -&gt; <code>1_city.json</code></li>
+<li><code>http://&lt;Pfad zum Server&gt;/rest/streets</code> -&gt; <code>2_street.json</code></li>
+<li><code>http://&lt;Pfad zum Server&gt;/rest/buildings</code> -&gt; <code>3_building.json</code></li>
+<li><code>http://&lt;Pfad zum Server&gt;/rest/buildingparts</code> -&gt; <code>4_building_part.json</code></li>
+<li><code>http://&lt;Pfad zum Server&gt;/rest/floors</code> -&gt; <code>5_floor.json</code></li>
+<li><code>http://&lt;Pfad zum Server&gt;/rest/rooms</code> -&gt; <code>6_room.json</code></li>
+<li><code>http://&lt;Pfad zum Server&gt;/rest/version</code> -&gt; <code>version.json</code></li>
+</ul>
+<p>Zum Deployen der Daten für die Android- und iOS-Apps genügt es nun, diese in den Unterordner <em>data/</em>
+des <a href="https://github.com/lmu-navigator/lmu-navigator.github.io">github.io-Repositories</a> zu pushen:</p>
+<pre><code>/data/json/    # json-Dateien
+/data/tiles/   # Kacheln aus Schritt 4
+/data/photos/  # Gebäudefotos, siehe unten
+
+</code></pre>
+
+<h2 id="neue-bilder-einbinden">Neue Bilder einbinden</h2>
+<p>Die Gebäudebilder liegen wie alle anderen statischen Dateien auf unserer github.io-Seite. Sie können
+getrennt von den restlichen Daten aktualisiert werden.</p>
+<p>Die Bilder sind nach dem Bauwerk-Code benannt und liegen in folgenden Unterordnern:</p>
+<pre><code>[1] data/photos (700px)
+[2] data/photos/thumbnails (150px)
+</code></pre>
+<p>Ein neues Bild wird also beispielsweise unter <code>data/photos/bw7070.jpg</code> und
+<code>data/photos/thumbnails/bw7070.jpg</code> abgelegt.</p>
+<p>Als Export-Qualität für die JPGs haben wir 80% gewählt und die Bilder mit einer kurzen Kante von 700
+Pixel exportiert. Die Vorschaubilder haben eine Höhe bzw. Breite von mindestens 150 Pixel. Die
+Originaldateien von den Gebäuden liegen im Unterordner /photos/original.</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../android" class="btn btn-neutral float-right" title="Android"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Startseite"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+        
+      <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../android" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

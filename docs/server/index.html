@@ -11,14 +11,14 @@
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script>
 
   <style>
     body {font-size: 90%;}
@@ -34,7 +34,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> LMU Navigator</a>
+        <a href=".." class="icon icon-home"> LMU Navigator</a>
         
       </div>
 
@@ -42,72 +42,30 @@
       <ul class="current">
     
         
-        <span>User-Guide</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../user-guide">Home</a>
-                    
-                </li>
-            
+            <li class="toctree-l1 ">
+                <a class="" href="../admin">Admin-Guide</a>
+            </li>
         
 
     
         
-        <span>Admin-Guide</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../admin-guide">Home</a>
-                    
-                </li>
-            
+            <li class="toctree-l1 ">
+                <a class="" href="../android">Android</a>
+            </li>
         
 
     
         
-        <span>Developer-Guide</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="..">Home</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../android">Android</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../ios">iOS</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Server</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l2"><a href="#server-dokumentation">Server Dokumentation</a></li>
-                            
-                                <li><a class="toctree-l3" href="#installation">Installation</a></li>
-                            
-                                <li><a class="toctree-l3" href="#architektur">Architektur</a></li>
-                            
-                                <li><a class="toctree-l3" href="#datenbank">Datenbank</a></li>
-                            
-                                <li><a class="toctree-l3" href="#rest-api">REST API</a></li>
-                            
-                                <li><a class="toctree-l3" href="#deployment-des-servers">Deployment des Servers</a></li>
-                            
-                                <li><a class="toctree-l3" href="#room-canvas">Room Canvas</a></li>
-                            
-                        
-                            <li class="toctree-l2"><a href="#future-work">Future Work</a></li>
-                            
-                        
-                        </ul>
-                    
-                </li>
-            
+            <li class="toctree-l1 ">
+                <a class="" href="../ios">iOS</a>
+            </li>
+        
+
+    
+        
+            <li class="toctree-l1 current">
+                <a class="current" href=".">Server</a>
+            </li>
         
 
     
@@ -122,7 +80,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="../.."></a>
+        <a href=".."></a>
       </nav>
 
       
@@ -130,7 +88,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     <li>Server</li>
       <li class="wy-breadcrumbs-aside">
         
@@ -145,13 +103,17 @@
           <div role="main">
             <div class="section">
               <h1 id="server-dokumentation">Server Dokumentation</h1>
-<p><strong>Repository: </strong> https://github.com/lmu-navigator/server</p>
+<p><strong>Repository:</strong> https://github.com/lmu-navigator/server</p>
 <p>Ausgangsbasis für den Server war die Praxisphase aus dem Praktikum <a href="http://www.mobile.ifi.uni-muenchen.de/studium_lehre/verg_semester/ws1314/msp/index.html">Mobile und Verteilte Systeme</a> im Wintersemester 2013/14. Dort haben wir einen RESTful Web Service mit Hilfe von Java, <a href="http://tomcat.apache.org/">Tomcat</a>, <a href="https://jersey.java.net/">Jersey</a> (JAX-RS) und <a href="http://www.mysql.com/">MySQL</a> aufgesetzt, hier die <a href="http://www.mobile.ifi.uni-muenchen.de/studium_lehre/verg_semester/ws1314/msp/05-rest.pdf">Folien zur damaligen Übung</a>.</p>
-<p><strong>Übersicht:</strong>
-<em> Installation
-</em> Architektur (Struktur)
-<em> REST API
-</em> Deployment</p>
+<p>Der Server aus dem Praktikum war über folgende Adresse erreichbar: <a href="http://141.84.213.246:8080/lmu-navigator/">http://141.84.213.246:8080/lmu-navigator/</a>. Wie lange dieser Server noch verfügbar bleibt, ist jedoch ungewiss.</p>
+<p>Die alten Repositories aus dem Praktikum sind noch auf GitLab verfügbar: das Repo aus dem <a href="https://gitlab.cip.ifi.lmu.de/loewe/lmu-navi">Wintersemester 2013/14</a> und aus dem darausfolgenden <a href="https://gitlab.cip.ifi.lmu.de/zieglerl/lmu-navigator/">Sommersemester 2014</a>.</p>
+<p><strong>Übersicht:</strong></p>
+<ul>
+<li>Installation</li>
+<li>Architektur (Struktur)</li>
+<li>REST API</li>
+<li>Deployment</li>
+</ul>
 <h2 id="installation">Installation</h2>
 <p>Installation der Arbeitsumgebung, welche von 2013 bis Anfang 2015 verwendet wurde.</p>
 <ul>
@@ -187,15 +149,15 @@
 </li>
 <li>
 <p>Projekt importieren
-<img alt="" src="../../images/server/installation-1.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/installation-1.png" /></p>
 </li>
 <li>
 <p>General &gt; Existing Projects into Workspace
-<img alt="" src="../../images/server/installation-2.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/installation-2.png" /></p>
 </li>
 <li>
 <p>Projekt hinzufügen
-<img alt="" src="../../images/server/installation-3.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/installation-3.png" /></p>
 </li>
 </ul>
 <p><strong>Konfiguration von Eclipse</strong></p>
@@ -203,19 +165,19 @@
 <ul>
 <li>
 <p>Java Version 1.6, da auf dem aktuellen Server (http://141.84.213.246:8080) nur Java 1.6 installiert ist.
-<img alt="" src="../../images/server/konfiguration-1.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/konfiguration-1.png" /></p>
 </li>
 <li>
 <p>Sicherstellen, dass die Facets <em>Dynamic Web Module</em> und <em>JAXB</em> ausgewählt sind.
-<img alt="" src="../../images/server/konfiguration-3.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/konfiguration-3.png" /></p>
 </li>
 <li>
 <p>Und hier noch eine Übersicht der verwendeten JARs
-<img alt="" src="../../images/server/konfiguration-2.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/konfiguration-2.png" /></p>
 </li>
 <li>
 <p>Sicherstellen, dass Tomcat auch als Runtime Environment zu Eclipse hinzugefügt wurde.
-<img alt="" src="../../images/server/konfiguration-2.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/konfiguration-2.png" /></p>
 </li>
 </ul>
 <h2 id="architektur">Architektur</h2>
@@ -275,77 +237,170 @@ public class Rooms {
 <p>Für die Klassen XX bis XX ist der Aufbau analog.</p>
 <p>Als Datenbank-Anbindung haben wir jeweils die Klassen CityMySQL - RoomMySQL angelegt.</p>
 <h2 id="datenbank">Datenbank</h2>
-<p>Als Datenbank haben wir uns für <a href="../../mysql.com">MySQL</a> und als Administrationsoberfläche für <a href="http://www.phpmyadmin.net/">PhpMyAdmin</a> entschieden, da hierfür die meisten Vorkenntnisse vorhanden waren.</p>
+<p>Als Datenbank haben wir uns für <a href="../mysql.com">MySQL</a> und als Administrationsoberfläche für <a href="http://www.phpmyadmin.net/">PhpMyAdmin</a> entschieden, da hierfür die meisten Vorkenntnisse vorhanden waren.</p>
 <p>Die Architektur der Datenbank ist angelehnt an die Struktur der CSV-Dateien, welche wir für den Import vom <a href="http://www.uni-muenchen.de/einrichtungen/zuv/uebersicht/dez_iv/ref_iv1/index.html">Referat IV.1</a> der LMU München bekommen.</p>
 <p>Ein vollständiger MySQL-Dump der Datenbank kann im privaten GitHub-Repository gefunden werden: https://github.com/lmu-navigator/data/tree/master/sql</p>
-<p>Zur Veranschaulichung findet ihr hier die Struktur der MySQL Tabellen (Stand Februar 2015). Der aktuelle Stand wird</p>
-<!--
+<p>Zur Veranschaulichung findet ihr hier die Struktur der MySQL Tabellen (Stand Februar 2015). Den aktuellen Stand findet ihr in der https://github.com/lmu-navigator/data/blob/master/sql/mysql-init.sql Datei.</p>
+<pre><code class="sql">CREATE TABLE IF NOT EXISTS `1_city` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` text NOT NULL,
+  `Name` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
-wzxhzdk:1
+CREATE TABLE IF NOT EXISTS `2_street` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` text NOT NULL,
+  `CityCode` text NOT NULL,
+  `Name` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `3_building` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` text NOT NULL,
+  `StreetCode` text NOT NULL,
+  `DisplayName` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `3_building_position` (
+  `Code` varchar(16) NOT NULL,
+  `CoordLat` double DEFAULT NULL,
+  `CoordLong` double DEFAULT NULL,
+  KEY `Code` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-Folgende Tabellen sind optional. Diese Tabellen waren für die Indoor-Routing Funktionalität unseres Prototypen benötigt.
+CREATE TABLE IF NOT EXISTS `4_building_part` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` text NOT NULL,
+  `BuildingCode` text NOT NULL,
+  `Address` text NOT NULL,
+  `hidden` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `5_floor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` text NOT NULL,
+  `BuildingPartCode` text NOT NULL,
+  `FloorLevel` text NOT NULL,
+  `Name` text NOT NULL,
+  `MapUri` text NOT NULL,
+  `MapSizeX` int(11) NOT NULL,
+  `MapSizeY` int(11) NOT NULL,
+  `hidden` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
-wzxhzdk:2
+CREATE TABLE IF NOT EXISTS `6_room` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Code` text NOT NULL,
+  `Name` text NOT NULL,
+  `FloorCode` text NOT NULL,
+  `PosX` double NOT NULL,
+  `PosY` double NOT NULL,
+  `hidden` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
--->
+CREATE TABLE IF NOT EXISTS `settings` (
+  `parameter` varchar(15) NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`parameter`),
+  UNIQUE KEY `param` (`parameter`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `version` (
+  `version` int(11) NOT NULL AUTO_INCREMENT,
+  `timestamp` int(11) NOT NULL,
+  `log` text NOT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+</code></pre>
+
+<p>Folgende Tabellen sind optional. Diese Tabellen waren für die Indoor-Routing Funktionalität unseres Prototypen benötigt.</p>
+<pre><code class="sql">CREATE TABLE IF NOT EXISTS `routing_edges` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `FloorId` int(11) NOT NULL,
+  `Source` int(11) NOT NULL,
+  `Target` int(11) NOT NULL,
+  `Weight` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `routing_floor_connections` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `BuildingId` int(11) NOT NULL,
+  `Source` int(11) NOT NULL,
+  `Target` int(11) NOT NULL,
+  `Type` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `routing_nodes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `FloorId` int(11) NOT NULL,
+  `PosX` double DEFAULT NULL,
+  `PosY` double DEFAULT NULL,
+  `Entrance` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `routing_room_connections` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Node` int(11) NOT NULL,
+  `Room` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+</code></pre>
 
 <h2 id="rest-api">REST API</h2>
 <p>Im folgenden wird die REST Schnittstelle des Tomcat Servers beschrieben. Aktuell kann die REST-API für den Server unter folgender Adresse aufgerufen werden: http://141.84.213.246:8080/lmu-navigator/rest/</p>
-<p>Für den Produktiveinsatz arbeiten wir vorerst mit statischen JSON-Dateien. Zum einen da sich der Datenbestand meist nur einmal pro Semester verändert, zum anderen da wir dadurch auf Server der LMU München zurückgreifen können. Die neu generierten JSON-Dateien werden bei jeder Verändernug (Veränderung der Versionsnummer <code>/rest/version</code>) erneut am Mobilgerät eingelesen. Die Aktualisierung ist einmal pro Semester in Rücksprache mit den Referaten geplant.</p>
-<p>Nützliche Links für die Entwicklung:
-<em> http://stackoverflow.com/q/630453/1402076 (PUT vs POST)
-</em> http://goo.gl/C3FPyt (Advanced Rest Client / Chrome Plugin)</p>
+<p>Für den Produktiveinsatz arbeiten wir vorerst mit statischen JSON-Dateien. Zum einen da sich der Datenbestand meist nur einmal pro Semester verändert, zum anderen da wir dadurch auf Server der LMU München zurückgreifen können. Die neu generierten JSON-Dateien werden bei jeder Veränderung (Inkrementierung der Versionsnummer <code>/rest/version</code>) erneut in die App eingelesen. Die Aktualisierung ist einmal pro Semester in Rücksprache mit den Referaten geplant.</p>
+<p>Nützliche Links für die Entwicklung:</p>
+<ul>
+<li><a href="http://stackoverflow.com/q/630453/1402076">PUT vs POST</a></li>
+<li><a href="http://goo.gl/C3FPyt">Chrome Plugin: Advanced Rest Client</a></li>
+</ul>
 <h3 id="statische-json-dateien">Statische JSON Dateien</h3>
-<p>Alle für die App relevanten Raum- und Gebäudedaten liegen auf folgendem Server der LMU vor:</p>
-<pre><code>TODO StaticServer URI
-</code></pre>
-<p>asdf</p>
+<p>Ursprünglich war angedacht alle für die App relevanten Raum- und Gebäudedaten auf einem StaticServer der LMU zu hosten. Sollte die App mal richtig an Fahrt aufnehmen, wäre dieser Schritt noch überlegenswert. Ansprechpartner für den StaticServer wäre das <a href="http://www.internetdienste.verwaltung.uni-muenchen.de/funktionen/kontakt/index.html">Referat für Internetdienste</a>.</p>
+<p>Für Entwicklungszwecke haben wir vorerst auf das Hosting von github.io zurückgegriffen. Die gleichen Dateien, welche wir später noch auf die LMU-Server auslagern können, sind direkt über folgende URL erreichbar: <a href="http://lmu-navigator.github.io/data/json/">lmu-navigator.github.io/data/json/</a></p>
 <pre><code>1_city.json
 2_street.json
 3_building.json
-3_building_position.json
 4_building_part.json
 5_floor.json
 6_room.json
 version.json
 </code></pre>
-<p>Hier werden neben den JSON Dateien auch die Gebäudepläne im PNG- und PDF-Format gehosted. Ansprechpartner für diesen Server ist das <a href="http://www.internetdienste.verwaltung.uni-muenchen.de/funktionen/kontakt/index.html">Referat für Internetdienste</a>.</p>
+<p>Hier werden neben den JSON Dateien auch die Gebäudepläne im PNG- &amp; PDF-Format und die Fotos der Gebäude gehosted, siehe den <a href="../admin-guide/">Admin-Guide</a>.</p>
 <h3 id="rest-funktionalitat-des-tomcat-servers">REST Funktionalität des Tomcat Servers</h3>
-<p><strong>GET /version</strong>
-* liefert die aktuelle Version der Datenbasis<br>
-  {"version":7,"timestamp":1409688383}</p>
+<p>Sofern der Tomcat-Server verwendet wird, steht auch eine REST-Schnittstelle zur Verfügung, über welchen gezielt einzelne Räume, Stockwerke oder Gebäude(teile) angesprochen werden können. Anbei eine kurze Beschreibung der vorhandenen Funktionalität. Alle Requests und Responses benutzen die JSON Syntax.</p>
+<p><strong>GET /ping</strong> dient zum Testen des Servers und liefert "Pong" zurück, sofern das Tomcat Servlet erfolgreich deployed wurde.</p>
+<p><strong>GET /version</strong> liefert die Versionsnummer für den aktuellen Stand der Daten.
+<br> {"version":7,"timestamp":1409688383}</p>
 <h4 id="cities">/cities</h4>
-<ul>
-<li><strong>GET /cities</strong>
-  returns a list of all cities with LMU buildings</li>
-</ul>
+<p><strong>GET   /cities</strong> liefert eine Liste aller Stadtteile mit LMU Gebäuden.</p>
 <h4 id="streets">/streets</h4>
+<p><strong>GET   /streets</strong> liefert eine Liste aller Straßen mit LMU Gebäuden. Die Liste lässt sich über die GET Parameter ?code={StreetCode} und ?city={CityCode} zusätzlich filtern.</p>
+<p><strong>GET   /streets/{StreetCode}</strong> liefert die über {StreetCode} angeforderte Straße zurück.</p>
 <h4 id="buildings">/buildings</h4>
+<p><strong>GET   /buildings</strong> liefert eine Liste aller LMU-Gebäude zurück. Die Liste lässt sich über die GET Parameter ?building={BuildingCode} und ?street={StreetCode} zusätzlich filtern.</p>
+<p><strong>GET   /buildings/{BuildingCode}</strong> liefert das über {BuildingCode} angeforderte Gebäude zurück.</p>
 <h4 id="buildingparts">/buildingparts</h4>
+<p><strong>GET   /buildingparts</strong> liefert eine Liste aller LMU-Gebäudeteile. Die Liste lässt sich über die GET Parameter ?buildingpart={BuildingPartCode} und ?building={BuildingCode} zusätzlich filtern.</p>
+<p><strong>GET   /buildingparts/{BuildingPartCode}</strong> liefert das über {BuildingPartCode} angeforderte Gebäudeteil zurück.</p>
 <h4 id="floors">/floors</h4>
-<ul>
-<li>
-<p><strong>GET /floors/{floorCode}</strong>
-  returns a single floor for the requested floor ID / code</p>
-</li>
-<li>
-<p><strong>GET /floors/{floorCode}/bordering</strong>
-  returns all floors associated to the same mapUri (PDF file), excluding the floor itself, required for buildings like the main building (Geschwister-Scholl-Platz)</p>
-</li>
-<li>
-<p><strong>GET /floors</strong>
-  returns all available floors from the database</p>
-</li>
-<li>
-<p><strong>GET /floors?code={floorCode}&amp;buildingpart={buildingPartCode}</strong>
-  returns all available floors from the database</p>
-</li>
-</ul>
+<p><strong>GET   /floors</strong> liefert eine Liste aller Stockwerke der gesamten LMU zurück. Die Liste lässt sich über die GET Parameter ?code={FloorCode} und ?buildingpart={BuildingPartCode} zusätzlich filtern.</p>
+<p><strong>GET   /floors/{FloorCode}</strong> liefert das über {FloorCode} angeforderte Stockwerk zurück.</p>
+<p><strong>GET /floors/{floorCode}/bordering</strong> liefert alle benachbarten Stockwerke zurück, welche auf die gleiche PDF-Datei (mapUri) zurückgreifen, sich selbst ausgeschlossen. Diese Funktionalität ist für Gebäude wie das Hauptgebäude notwendig, da dort auf einer PDF mehrere Floors enthalten sind und diese somit rekursiv geladen werden können.</p>
 <h4 id="rooms">/rooms</h4>
-<p><strong>Besonderheiten:</strong> Es werden nur Räume als JSON ausgegeben, die eine gültige Position haben (PosX != 0 + PosY != 0) und sichtbar sind (hidden == 0). Nicht positionierte und deaktivierte Räume werden somit nicht zur App übertragen.</p>
+<p><strong>GET   /rooms</strong> liefert eine Liste aller Räume der gesamten LMU zurück. Die Liste lässt sich über die GET Parameter ?code={FloorCode} und ?buildingpart={BuildingPartCode} zusätzlich filtern.</p>
+<p><strong>GET   /rooms/{RoomCode}</strong> liefert den über {RoomCode} angeforderten Raum zurück.</p>
+<p><strong>POST  /rooms/{RoomCode}</strong> ermöglicht das Anlegen eines neuen Raumes in der Datenbank.</p>
+<p><strong>Besonderheiten:</strong> Es werden nur Räume als JSON ausgegeben, die eine gültige Position haben (PosX != 0 + PosY != 0) und sichtbar sind (hidden == 0). Nicht positionierte und deaktivierte Räume werden somit nicht über die REST-Schnittstelle ausgegeben.</p>
 <h2 id="deployment-des-servers">Deployment des Servers</h2>
 <p>Schritt für Schritt-Anleitung:</p>
 <ul>
@@ -354,18 +409,20 @@ version.json
 </li>
 <li>
 <p>Eclipse-Projekt als WAR-File exportieren
-<img alt="" src="../../images/server/deployment-1.png" /></p>
+<br><img alt="" src="../developer-guide/images/server/deployment-1.png" /></p>
 </li>
 <li>
 <p>WinSCP starten und am Server einloggen</p>
 </li>
 <li>
 <p>Die WAR-Datei hochladen und nun folgende Kommandos ausführen</p>
-<p>sudo rm webapps/lmu-navigator.war
-sudo rm webapps/lmu-navigator/ -r
-sudo mv lmu-navigator.war webapps/</p>
 </li>
 </ul>
+<pre><code>  sudo rm webapps/lmu-navigator.war
+  sudo rm webapps/lmu-navigator/ -r
+  sudo mv lmu-navigator.war webapps/
+</code></pre>
+
 <p>Der Pfad für <code>webapps</code> variiert von System zu System. Auf dem aktuellen System weist er auf <code>/var/lib/tomcat7/webapps</code>.</p>
 <p>Bei Problemen mit Tomcat auf dem <a href="http://141.84.213.246:8080/">141.84.213.246</a>-Server am besten mal in das <a href="https://gitlab.cip.ifi.lmu.de/zieglerl/lmu-navigator/wikis/tomcat-server">GitLab-Wiki</a> schauen.</p>
 <h2 id="room-canvas">Room Canvas</h2>
