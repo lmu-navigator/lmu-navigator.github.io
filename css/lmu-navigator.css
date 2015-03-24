@@ -1,6 +1,7 @@
 /* GENERAL STYLING */
 
 #index-banner {
+    padding-top: 0;
     /*
     background-color: #ee6e73;
     color: #fff;
@@ -43,6 +44,8 @@ nav {
 
 header {
     background-color: #0AA14C;
+    color: #fff;
+    padding-top: 20px;
 }
 
 footer.page-footer {
@@ -56,4 +59,8 @@ footer.page-footer {
 
 .btn-large:hover {
     background-color: #0fbc5a;
+}
+
+.promo-caption {
+    font-size: 18px;
 }

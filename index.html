@@ -14,42 +14,20 @@
 
 
     <header>
-        <div class="container">
-
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">LMU Navigator</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="#android">Android</a>
-                        </li>
-                        <li><a href="#iOS">iOS</a>
-                        </li>
-                        <li><a href="docs">Mach mit</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-    </header>
-    <main>
-        <div class="section no-pad-bot" id="index-banner">
+        <div class="row">
             <div class="container">
-                <!--                <h1 class="header center-on-small-only">Raumsuche an der LMU</h1>-->
+                <div class="col m12 l8 center">
+                    <h1 class="header center-on-small-only">LMU Navigator</h1>
+                    <h4 class="header light">Die App zur Raumsuche an <br> der LMU München</h4>
+                </div>
 
-                <div class="row" style="margin: 3em 0">
-                    <div class="col s6 m8">
-                        <br>
-                        <br>
-                        <br>
-                        <h4 class="header col s12 light center">Die App zur Raumsuche an <br> der LMU München</h4>
-                    </div>
-                    <div class="col s6 m4">
-                        <img id="responsive-img" src="images/logo.png">
-                    </div>
+                <div class="col s12 m8 offset-m2 l4">
+                    <img id="responsive-img" src="images/screenshots/karte.png">
                 </div>
 
             </div>
+        </div>
+        <div class="section no-pad-bot" id="index-banner">
 
             <div class="github-commit">
                 <div class="container">
@@ -61,7 +39,94 @@
                 </div>
             </div>
         </div>
+    </header>
+    <main>
+
+        <div class="container" id="download">
+            <div class="section">
+
+                <div class="row">
+                    <div class="col s8 offset-s2 m6 offset-m3">
+                        <br>
+                        <img id="responsive-img" src="images/logo.png">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h3 class="col s12 light center header">Der LMU Navigator erleichtert deinen Uni-Alltag an der LMU</h3>
+                </div>
+
+
+
+                <!--   Promo Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="center promo">
+                            <p class="promo-caption">Alle Standorte der LMU</p>
+                            <!--<p class="light center">Finde die Raum- und Gebäudepläne alle LMU-Standorte in dieser App.</p>-->
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="center promo">
+                            <p class="promo-caption">Gebäudepläne anschauen</p>
+                            <!--                            <p class="light center"></p>-->
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="center promo">
+                            <p class="promo-caption">Räume suchen</p>
+                            <!--                            <p class="light center"></p>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <div class="row center">
+                    <h3 class="light header">Android-App</h3>
+                    <p class="col s8 offset-s2 caption">In Kürze hoffen wir die Android-App im Google Play Store veröffentlichen zu dürfen.</p>
+                    <a href="" onclick="alert('Link zum Android AppStore')" class="btn-large waves-effect waves-light">Download</a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <div class="row center">
+                    <h3 class="light header">iOS-App</h3>
+                    <p class="col s8 offset-s2 caption">Wir arbeiten an einer iOS-App, suchen aber noch Entwickler. Hast du Zeit und Interesse mitzumachen? Dann <a href="http://lmu-navigator.github.io/docs/#mach-mit">melde dich bei uns</a>.
+                    </p>
+                    <a href="http://lmu-navigator.github.io/docs/#mach-mit" class="btn-large waves-effect waves-light">Hilf mit</a>
+                </div>
+            </div>
+        </div>
+
     </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l4 s12">
+                    <h5 class="white-text">Studentisches Forschungsprojekt</h5>
+                    <p class="grey-text text-lighten-4">Unser Ziel ist es die von der Uni öffentlich zugänglichen Raumdaten auf mobilen Endgeräten zur Verfügung zu stellen, damit Studenten auch von unterwegs darauf zugreifen können. Der bisherige Code liegt auf GitHub bereit und lässt sich beliebig erweitern.</p>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Wir suchen Entwickler</h5>
+                    <p class="grey-text text-lighten-4">Wir suchen Studenten, die genau so wie wir Lust darauf haben, das an der Uni Gelernte in die Praxis umzusetzen. Jeder Art von Hilfe ist willkommen: egal ob Bug-Reports, neue Features oder eine Portierung zu iOS oder Windows Phone.</p>
+                </div>
+                <div class="col l4 s12" style="overflow: hidden;">
+                    <h5 class="white-text">GitHub</h5>
+                    <a class="github-button" href="https://github.com/lmu-navigator" data-style="mega">Follow @lmu-navigator</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Ein studentisches Forschungsprojekt der LMU München
+                <a class="grey-text text-lighten-4 right" href="http://www.uni-muenchen.de/studium/lehre_at_lmu/index.html" target="_blank">Lehre@LMU</a>
+            </div>
+        </div>
+    </footer>
 
 
 
