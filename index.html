@@ -13,15 +13,21 @@
 <body>
 
 
+    <a href="https://github.com/lmu-navigator" class="hide-on-small-only"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+    </a>
+
     <header>
         <div class="row">
-            <div class="container valign-wrapper">
-                <div class="col m12 l8 center">
-                    <h1 class="header center-on-small-only">LMU Navigator</h1>
-                    <h4 class="header light">Die App zur Raumsuche an <br> der LMU München</h4>
+            <div class="container valign-wrapper ">
+                <div class="col s12 m12 l8 center">
+                    <h1>LMU Navigator</h1>
+                    <span class="light teaser">Die App zur Raumsuche an der LMU München</span>
+                    <div class="row center">
+                        <a href="#download" class="btn-large waves-effect waves-light">Download</a>
+                    </div>
                 </div>
 
-                <div class="col s12 m8 offset-m2 l4">
+                <div class="col s12 m12 offset-m2 l4 hide-on-small-only">
                     <img id="responsive-img" src="images/screenshots/karte.png">
                 </div>
 
@@ -32,9 +38,8 @@
             <div class="github-commit">
                 <div class="container">
                     <div class="commit">
-                        <a class="github-button" href="https://github.com/lmu-navigator" data-style="mega">Mach mit</a>
-                        <a id="github-button" href="https://github.com/lmu-navigator/" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only">Github</a>
-                        <a id="github-button" href="http://lmu-navigator.github.io/docs/" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light hide-on-small-only">Docs</a>
+                        <a id="github-button" href="https://github.com/lmu-navigator/" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light">Github</a>
+                        <a id="github-button" href="http://lmu-navigator.github.io/docs/" class="btn-flat right grey-text text-lighten-5 waves-effect waves-light">Docs</a>
                     </div>
                 </div>
             </div>
@@ -42,13 +47,13 @@
     </header>
     <main>
 
-        <div class="container" id="download">
+        <div class="container">
             <div class="section">
 
-                <div class="row">
+                <div class="row valign-wrapper hide-on-small-only">
                     <div class="col s8 offset-s2 m6 offset-m3">
-                        <br>
-                        <img id="responsive-img" src="images/logo.png">
+                        <img id="" src="images/logo.png">
+                        <div style="float:right">Navigator</div>
                     </div>
                 </div>
 
@@ -56,7 +61,7 @@
                     <h3 class="col s12 light center header">Der LMU Navigator erleichtert deinen Uni-Alltag an der LMU</h3>
                 </div>
 
-
+                <div class="divider"></div>
 
                 <!--   Promo Section   -->
                 <div class="row">
@@ -84,10 +89,12 @@
 
             </div>
             <div class="divider"></div>
-            <div class="section">
+            <div class="section" id="download">
                 <div class="row center">
                     <h3 class="light header">Android-App</h3>
                     <p class="col s8 offset-s2 caption">In Kürze hoffen wir die Android-App im Google Play Store veröffentlichen zu dürfen.</p>
+                </div>
+                <div class="row center">
                     <a href="" onclick="alert('Link zum Android AppStore')" class="btn-large waves-effect waves-light">Download</a>
                 </div>
             </div>
@@ -97,6 +104,8 @@
                     <h3 class="light header">iOS-App</h3>
                     <p class="col s8 offset-s2 caption">Wir arbeiten an einer iOS-App, suchen aber noch Entwickler. Hast du Zeit und Interesse mitzumachen? Dann <a href="http://lmu-navigator.github.io/docs/#mach-mit">melde dich bei uns</a>.
                     </p>
+                </div>
+                <div class="row center">
                     <a href="http://lmu-navigator.github.io/docs/#mach-mit" class="btn-large waves-effect waves-light">Hilf mit</a>
                 </div>
             </div>
@@ -108,7 +117,7 @@
             <div class="row">
                 <div class="col l4 s12">
                     <h5 class="white-text">Studentisches Forschungsprojekt</h5>
-                    <p class="grey-text text-lighten-4">Unser Ziel ist es die von der Uni öffentlich zugänglichen Raumdaten auf mobilen Endgeräten zur Verfügung zu stellen, damit Studenten auch von unterwegs darauf zugreifen können. Der bisherige Code liegt auf GitHub bereit und lässt sich beliebig erweitern.</p>
+                    <p class="grey-text text-lighten-4">Unser Ziel ist es die von der Uni öffentlich zugänglichen Raumdaten auf mobilen Endgeräten zur Verfügung zu stellen, damit Studenten auch von unterwegs darauf zugreifen können.</p>
                 </div>
                 <div class="col l4 s12">
                     <h5 class="white-text">Wir suchen Entwickler</h5>
@@ -122,7 +131,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                Ein studentisches Forschungsprojekt der LMU München
+                Ein <a class="grey-text text-lighten-4" href="http://www.uni-muenchen.de/studium/lehre_at_lmu/index.html" target="_blank">studentisches Forschungsprojekt</a> der <a class="grey-text text-lighten-4" href="http://www.uni-muenchen.de/" target="_blank">LMU München</a>
                 <a class="grey-text text-lighten-4 right" href="http://www.uni-muenchen.de/studium/lehre_at_lmu/index.html" target="_blank">Lehre@LMU</a>
             </div>
         </div>

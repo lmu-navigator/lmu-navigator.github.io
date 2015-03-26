@@ -58,9 +58,22 @@ footer.page-footer {
 }
 
 .btn-large:hover {
-    background-color: #0fbc5a;
+    background-color: #18B25A;
+}
+
+header .btn-large {
+    background-color: #137E41;
+    margin-top: 20px;
+}
+
+header .btn-large:hover {
+    background-color: #0C9044;
 }
 
 .promo-caption {
     font-size: 18px;
+}
+
+span.teaser {
+    font-size: 35px;
 }
